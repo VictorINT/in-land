@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://resources/grass.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://bere.tscn" type="PackedScene" id=5]
 [ext_resource path="res://inamic_emojiRetardat.tscn" type="PackedScene" id=6]
 [ext_resource path="res://inamic.gd" type="Script" id=7]
+[ext_resource path="res://sword.tscn" type="PackedScene" id=8]
 
 [node name="world" type="Node"]
 
@@ -35,6 +36,12 @@ current = true
 [node name="bere" parent="elemente/YSort/player/bere" instance=ExtResource( 5 )]
 position = Vector2( 160, 88 )
 scale = Vector2( 1.00592, 0.991091 )
+
+[node name="weapons" type="YSort" parent="elemente/YSort/player"]
+scale = Vector2( 1, 0.966928 )
+
+[node name="sword" parent="elemente/YSort/player/weapons" instance=ExtResource( 8 )]
+position = Vector2( 160, 96 )
 
 [node name="trees" type="YSort" parent="elemente/YSort"]
 position = Vector2( 24, 72 )

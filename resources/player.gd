@@ -6,7 +6,7 @@ const MAX_SPEED = 80
 var selectedItem
 var item
 var velocity = Vector2.ZERO
-
+var attackState = null
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -33,7 +33,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("drop") and selectedItem != null:
 		$Position2D/RemoteTransform2D.remote_path = ""
 		selectedItem = null
-
+	if Input.is_action_just_pressed("attack") and selectedItem == null:
+		pass #
 
 func _on_Area2D_body_entered(body):
 	item = body

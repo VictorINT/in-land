@@ -11,9 +11,9 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 5.87435, -28.174 )
+position = Vector2( 1.01958, -27.7704 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.0150414, -19.9027 )
+position = Vector2( -4.82288, -19.3342 )
 shape = SubResource( 1 )
