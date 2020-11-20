@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="Menu" type="Control"]
+anchor_right = 0.2
+anchor_bottom = 0.178
+margin_right = -64.0
+margin_bottom = -32.04
+__meta__ = {
+"_edit_use_anchors_": false
+}

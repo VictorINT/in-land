@@ -30,6 +30,9 @@ func _physics_process(delta):
 		selectedItem = item
 		$Position2D/RemoteTransform2D.remote_path = selectedItem.get_path()
 		
+	if Input.is_action_just_pressed("drop") and selectedItem != null:
+		$Position2D/RemoteTransform2D.remote_path = ""
+		selectedItem = null
 
 
 func _on_Area2D_body_entered(body):
