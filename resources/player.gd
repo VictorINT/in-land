@@ -21,7 +21,7 @@ func _physics_process(delta):
 		$Sprite.flip_h = true
 		if selectedItem != null:
 			selectedItem.get_node("Sprite").flip_h = true
-	else:
+	elif velocity.x > 0:
 		$Sprite.flip_h = false
 		if selectedItem != null:
 			selectedItem.get_node("Sprite").flip_h = false
@@ -29,6 +29,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("pick") and item != null:
 		selectedItem = item
 		$Position2D/RemoteTransform2D.remote_path = selectedItem.get_path()
+		
 
 
 func _on_Area2D_body_entered(body):

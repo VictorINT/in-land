@@ -28,6 +28,12 @@ position = Vector2( 120, 88 )
 [node name="Camera2D" type="Camera2D" parent="elemente/YSort/player/player"]
 current = true
 
+[node name="bere" type="YSort" parent="elemente/YSort/player"]
+
+[node name="bere" parent="elemente/YSort/player/bere" instance=ExtResource( 5 )]
+position = Vector2( 160, 88 )
+scale = Vector2( 1.00592, 0.991091 )
+
 [node name="trees" type="YSort" parent="elemente/YSort"]
 position = Vector2( 24, 72 )
 
@@ -48,9 +54,3 @@ position = Vector2( 64, 64 )
 [node name="casa" parent="elemente/YSort/houses" instance=ExtResource( 4 )]
 position = Vector2( 104, 48 )
 scale = Vector2( 1.9, 1.9 )
-
-[node name="bere" type="Node2D" parent="elemente/YSort"]
-
-[node name="bere" parent="elemente/YSort/bere" instance=ExtResource( 5 )]
-position = Vector2( 160, 88 )
-z_index = 11
