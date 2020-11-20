@@ -16,3 +16,7 @@ func _physics_process(delta):
 		else:
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 		velocity = move_and_slide(velocity)
+		if velocity.x < 0:
+			$Sprite.flip_h = true
+		else:
+			$Sprite.flip_h = false
