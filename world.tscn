@@ -4,7 +4,7 @@
 [ext_resource path="res://resources/grass.png" type="Texture" id=2]
 [ext_resource path="res://tree.tscn" type="PackedScene" id=3]
 [ext_resource path="res://casa.tscn" type="PackedScene" id=4]
-[ext_resource path="res://resources/halba_bere.png" type="Texture" id=5]
+[ext_resource path="res://bere.tscn" type="PackedScene" id=5]
 
 [node name="world" type="Node"]
 
@@ -23,7 +23,7 @@ region_rect = Rect2( 0, 0, 336, 224 )
 [node name="player" type="YSort" parent="elemente/YSort"]
 
 [node name="player" parent="elemente/YSort/player" instance=ExtResource( 1 )]
-position = Vector2( 117.018, 84.4058 )
+position = Vector2( 120, 88 )
 
 [node name="Camera2D" type="Camera2D" parent="elemente/YSort/player/player"]
 current = true
@@ -49,7 +49,8 @@ position = Vector2( 64, 64 )
 position = Vector2( 104, 48 )
 scale = Vector2( 1.9, 1.9 )
 
-[node name="halba_bere" type="Sprite" parent="elemente/YSort"]
-position = Vector2( 144, 72 )
-scale = Vector2( 0.45, 0.45 )
-texture = ExtResource( 5 )
+[node name="bere" type="Node2D" parent="elemente/YSort"]
+
+[node name="bere" parent="elemente/YSort/bere" instance=ExtResource( 5 )]
+position = Vector2( 160, 88 )
+z_index = 11
