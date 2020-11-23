@@ -10,6 +10,7 @@ d = 1.82003
 b = Vector2( -0.0177193, 24.9084 )
 
 [node name="casa_inside" type="StaticBody2D"]
+collision_layer = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -53.25 )
