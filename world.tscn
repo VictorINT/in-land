@@ -26,7 +26,7 @@ region_rect = Rect2( 0, 0, 656, 432 )
 [node name="player" type="YSort" parent="elemente/YSort"]
 
 [node name="player" parent="elemente/YSort/player" instance=ExtResource( 1 )]
-position = Vector2( 120, 88 )
+position = Vector2( 120, 87.8754 )
 
 [node name="Camera2D" type="Camera2D" parent="elemente/YSort/player/player"]
 current = true
