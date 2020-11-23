@@ -5,9 +5,15 @@ const FRICTION = 500
 const ACCELERATION = 500
 const MAX_SPEED = 80
 
+#Location System
+enum Location{
+	OUTSIDE,
+	INSIDE_HOUSE
+}
+export(Location) var whereTheFuckIAm = Location.OUTSIDE #Variabila care retine unde sunt
+
 #variabile
-export var inHouse = false		#sa tin minte daca sunt in casa sau sunt afara pe parcursul scenelor
-onready var simultaneous_scene = load("res://casa_inside.tscn")		#variabila cu scena casei interioare
+onready var inside_house = load("res://casa_inside.tscn")		#variabila cu scena casei interioare
 onready var main_scene = load("res://world.tscn")		#variabila cu scena lumii main
 #sistem pentru pick up items
 var onEntered = false
@@ -17,6 +23,17 @@ var item
 var velocity = Vector2.ZERO
 
 #functii
+
+func _ready():
+	if PlayerSkeleton.playerLocation == null:
+		PlayerSkeleton.playerLocation = whereTheFuckIAm;
+	else:
+		whereTheFuckIAm = PlayerSkeleton.playerLocation;
+		
+	if whereTheFuckIAm == Location.OUTSIDE and PlayerSkeleton.comingFromInside:
+		global_position = Vector2(85, 60)
+	PlayerSkeleton.comingFromInside = false
+
 #functie de miscare si de input uri de la tastatura
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO
@@ -45,26 +62,24 @@ func _physics_process(delta):
 		$Position2D/RemoteTransform2D.remote_path = ""
 		selectedItem = null
 	
-	if Input.is_action_just_pressed("interact") and onEntered == true:
-		_add_a_scene_manually()
+	if Input.is_action_just_pressed("interact") and $houseDetector.get_overlapping_areas().size()>0:
+		if whereTheFuckIAm == Location.INSIDE_HOUSE:
+# warning-ignore:return_value_discarded
+			get_tree().change_scene_to(main_scene)
+			whereTheFuckIAm = Location.OUTSIDE
+			PlayerSkeleton.playerLocation = Location.OUTSIDE
+			PlayerSkeleton.comingFromInside = true
+		elif whereTheFuckIAm == Location.OUTSIDE:
+# warning-ignore:return_value_discarded
+			get_tree().change_scene_to(inside_house)
+			whereTheFuckIAm = Location.INSIDE_HOUSE
+			PlayerSkeleton.playerLocation = Location.INSIDE_HOUSE
+
 
 #functie semnal care se aplica atunci cand raza din jurul player ului intra in contact cu un collision shape pentru interactiune
 func _on_Area2D_body_entered(body):
 	item = body
-	onEntered = true
 	
 #functie semnal ca mai sus, dar pentru iesire
 func _on_Area2D_body_exited(_body):
 	item = null
-	onEntered = false
-	
-#functie care schimba scena
-func _add_a_scene_manually():
-	if inHouse == false:
-		inHouse = true
-# warning-ignore:return_value_discarded
-		get_tree().change_scene_to(simultaneous_scene)
-	elif inHouse == true:
-		inHouse = false
-# warning-ignore:return_value_discarded
-		get_tree().change_scene_to(main_scene)
