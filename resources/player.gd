@@ -6,15 +6,17 @@ const ACCELERATION = 500
 const MAX_SPEED = 80
 
 #variabile
-export var inHouse = false
-onready var simultaneous_scene = load("res://casa_inside.tscn")
-onready var main_scene = load("res://world.tscn")
+export var inHouse = false		#sa tin minte daca sunt in casa sau sunt afara pe parcursul scenelor
+onready var simultaneous_scene = load("res://casa_inside.tscn")		#variabila cu scena casei interioare
+onready var main_scene = load("res://world.tscn")		#variabila cu scena lumii main
+#sistem pentru pick up items 
 var selectedItem
 var item
+#vector de miscare
 var velocity = Vector2.ZERO
-var attackState = null
 
 #functii
+#functie de miscare si de input uri de la tastatura
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -45,12 +47,15 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("interact"):
 		_add_a_scene_manually()
 
+#functie semnal care se aplica atunci cand raza din jurul player ului intra in contact cu un collision shape pentru interactiune
 func _on_Area2D_body_entered(body):
 	item = body
-
+	
+#functie semnal ca mai sus, dar pentru iesire
 func _on_Area2D_body_exited(body):
 	item = null
 	
+#functie care schimba scena
 func _add_a_scene_manually():
 	if inHouse == false:
 		inHouse = true
