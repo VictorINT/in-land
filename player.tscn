@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://resources/player1.png" type="Texture" id=1]
 [ext_resource path="res://resources/player.gd" type="Script" id=2]
@@ -8,7 +8,10 @@ radius = 2.83035
 height = 7.21225
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 28.2849
+radius = 23.6312
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 14.2522
 
 [node name="player" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -21,17 +24,27 @@ texture = ExtResource( 1 )
 position = Vector2( -0.720604, -6.68112 )
 shape = SubResource( 1 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="itemDetector" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="itemDetector"]
 position = Vector2( -0.445961, -3.56762 )
 shape = SubResource( 2 )
+
+[node name="houseDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="houseDetector"]
+position = Vector2( -0.445961, -3.56762 )
+shape = SubResource( 3 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( -0.118, 0.887 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Position2D"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="itemDetector" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="itemDetector" to="." method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="houseDetector" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="houseDetector" to="." method="_on_Area2D_body_exited"]
