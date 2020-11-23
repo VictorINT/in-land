@@ -14,7 +14,7 @@
 [node name="floor" type="Node" parent="."]
 
 [node name="grass" type="Sprite" parent="floor"]
-position = Vector2( 120, 88 )
+position = Vector2( 88, 120 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 656, 432 )

@@ -6,10 +6,12 @@
 radius = 4.10725
 height = 39.6852
 
-[sub_resource type="SegmentShape2D" id=2]
-b = Vector2( 0.0550949, 16.5883 )
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 0.609444
+height = 17.8438
 
 [node name="casa" type="StaticBody2D"]
+collision_mask = 0
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.943874, -32.2097 )
@@ -21,8 +23,11 @@ rotation = -1.5708
 shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
+scale = Vector2( 1.02088, 2.22805 )
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -18.2634, 0.8909 )
+position = Vector2( -8.47433, -1.86257 )
 rotation = -1.5708
 shape = SubResource( 2 )
