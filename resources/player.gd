@@ -31,11 +31,11 @@ func _physics_process(delta):
 	if velocity.x < 0:
 		$Sprite.flip_h = true
 		if selectedItem != null:
-			selectedItem.get_node("Sprite").flip_h = true
+			selectedItem.inverted = true
 	elif velocity.x > 0:
 		$Sprite.flip_h = false
 		if selectedItem != null:
-			selectedItem.get_node("Sprite").flip_h = false
+			selectedItem.inverted = false
 		
 	if Input.is_action_just_pressed("pick") and item != null:
 		selectedItem = item

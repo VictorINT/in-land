@@ -31,17 +31,16 @@ position = Vector2( 120, 87.8754 )
 [node name="Camera2D" type="Camera2D" parent="elemente/YSort/player/player"]
 current = true
 
-[node name="bere" type="YSort" parent="elemente/YSort/player"]
+[node name="items" type="YSort" parent="elemente/YSort/player"]
 
-[node name="bere" parent="elemente/YSort/player/bere" instance=ExtResource( 5 )]
-position = Vector2( 160, 88 )
+[node name="sword" parent="elemente/YSort/player/items" instance=ExtResource( 8 )]
+position = Vector2( 160, 92.8251 )
+rotation = 0.369027
+scale = Vector2( 0.995504, 0.971556 )
+
+[node name="bere" parent="elemente/YSort/player/items" instance=ExtResource( 5 )]
+position = Vector2( 46.3326, 85.8787 )
 scale = Vector2( 1.00592, 0.991091 )
-
-[node name="weapons" type="YSort" parent="elemente/YSort/player"]
-scale = Vector2( 1, 0.966928 )
-
-[node name="sword" parent="elemente/YSort/player/weapons" instance=ExtResource( 8 )]
-position = Vector2( 160, 96 )
 
 [node name="trees" type="YSort" parent="elemente/YSort"]
 position = Vector2( 24, 72 )

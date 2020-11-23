@@ -1,19 +1,33 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://resources/halba_bere.png" type="Texture" id=1]
 
+[sub_resource type="GDScript" id=2]
+script/source = "extends KinematicBody2D
+
+
+var inverted = false setget setFunction
+
+func setFunction(value):
+	inverted = value
+	$Sprite.flip_h = value
+"
+
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 3.76256
-height = 5.73009
+radius = 7.25656
+height = 24.9012
 
 [node name="bere" type="KinematicBody2D"]
 collision_layer = 2
 collision_mask = 0
+script = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 1.01958, -27.7704 )
+position = Vector2( 0.281002, -27.763 )
 texture = ExtResource( 1 )
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -4.82288, -19.3342 )
+position = Vector2( 0.795769, -20.6452 )
+rotation = 1.5708
 shape = SubResource( 1 )
