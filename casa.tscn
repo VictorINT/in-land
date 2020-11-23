@@ -11,7 +11,6 @@ radius = 0.609444
 height = 17.8438
 
 [node name="casa" type="StaticBody2D"]
-collision_layer = 2
 collision_mask = 0
 
 [node name="Sprite" type="Sprite" parent="."]
