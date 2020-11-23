@@ -52,14 +52,16 @@ func _on_Area2D_body_entered(body):
 	item = body
 	
 #functie semnal ca mai sus, dar pentru iesire
-func _on_Area2D_body_exited(body):
+func _on_Area2D_body_exited(_body):
 	item = null
 	
 #functie care schimba scena
 func _add_a_scene_manually():
 	if inHouse == false:
 		inHouse = true
+# warning-ignore:return_value_discarded
 		get_tree().change_scene_to(simultaneous_scene)
 	elif inHouse == true:
 		inHouse = false
+# warning-ignore:return_value_discarded
 		get_tree().change_scene_to(main_scene)
