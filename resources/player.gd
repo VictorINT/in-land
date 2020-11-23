@@ -6,7 +6,9 @@ const ACCELERATION = 500
 const MAX_SPEED = 80
 
 #variabile
+export var inHouse = false
 onready var simultaneous_scene = load("res://casa_inside.tscn")
+onready var main_scene = load("res://world.tscn")
 var selectedItem
 var item
 var velocity = Vector2.ZERO
@@ -50,4 +52,9 @@ func _on_Area2D_body_exited(body):
 	item = null
 	
 func _add_a_scene_manually():
-	get_tree().change_scene_to(simultaneous_scene)
+	if inHouse == false:
+		inHouse = true
+		get_tree().change_scene_to(simultaneous_scene)
+	elif inHouse == true:
+		inHouse = false
+		get_tree().change_scene_to(main_scene)
