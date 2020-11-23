@@ -10,6 +10,7 @@ export var inHouse = false		#sa tin minte daca sunt in casa sau sunt afara pe pa
 onready var simultaneous_scene = load("res://casa_inside.tscn")		#variabila cu scena casei interioare
 onready var main_scene = load("res://world.tscn")		#variabila cu scena lumii main
 #sistem pentru pick up items
+var inInventory = false
 var onEntered = false
 var selectedItem
 var item
@@ -47,7 +48,10 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("interact") and onEntered == true:
 		_add_a_scene_manually()
-
+	
+	if Input.is_action_just_pressed("inventory"):
+		_add_a_scene_manually()
+	
 #functie semnal care se aplica atunci cand raza din jurul player ului intra in contact cu un collision shape pentru interactiune
 func _on_Area2D_body_entered(body):
 	item = body
@@ -68,3 +72,11 @@ func _add_a_scene_manually():
 		inHouse = false
 # warning-ignore:return_value_discarded
 		get_tree().change_scene_to(main_scene)
+
+func openInventory():
+	if(inInventory == true):
+		pass #exit inventory
+		inInventory = false
+	else:
+		pass #enter inventory
+		inInventory = true
