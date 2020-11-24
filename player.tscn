@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://resources/player1.png" type="Texture" id=1]
 [ext_resource path="res://resources/player.gd" type="Script" id=2]
+[ext_resource path="res://Inventory.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 2.83035
@@ -44,6 +45,11 @@ shape = SubResource( 3 )
 position = Vector2( -0.118, 0.887 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Position2D"]
+
+[node name="InventoryUI" type="CanvasLayer" parent="."]
+
+[node name="Inventory" parent="InventoryUI" instance=ExtResource( 3 )]
+visible = false
 [connection signal="body_entered" from="itemDetector" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="itemDetector" to="." method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="houseDetector" to="." method="_on_Area2D_body_entered"]
