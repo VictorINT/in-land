@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://resources/grass.png" type="Texture" id=2]
@@ -9,16 +9,23 @@
 [ext_resource path="res://inamic.gd" type="Script" id=7]
 [ext_resource path="res://sword.tscn" type="PackedScene" id=8]
 [ext_resource path="res://fireplace.tscn" type="PackedScene" id=9]
+[ext_resource path="res://resources/parchetOriginal.tres" type="TileSet" id=10]
 
 [node name="world" type="Node"]
 
 [node name="floor" type="Node" parent="."]
 
 [node name="grass" type="Sprite" parent="floor"]
-position = Vector2( 88, 120 )
+position = Vector2( 133, 88.7624 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 656, 432 )
+
+[node name="TileMap" type="TileMap" parent="floor"]
+tile_set = ExtResource( 10 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 65540, 0, 196611 )
 
 [node name="elemente" type="Node" parent="."]
 
