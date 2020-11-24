@@ -22,57 +22,57 @@ region_rect = Rect2( 0, 0, 656, 432 )
 
 [node name="elemente" type="Node" parent="."]
 
-[node name="YSort" type="YSort" parent="elemente"]
+[node name="elemente-nivel0" type="YSort" parent="elemente"]
 
-[node name="player" type="YSort" parent="elemente/YSort"]
+[node name="player" type="YSort" parent="elemente/elemente-nivel0"]
 
-[node name="player" parent="elemente/YSort/player" instance=ExtResource( 1 )]
+[node name="player" parent="elemente/elemente-nivel0/player" instance=ExtResource( 1 )]
 position = Vector2( 120, 87.8754 )
 
-[node name="Camera2D" type="Camera2D" parent="elemente/YSort/player/player"]
+[node name="Camera2D" type="Camera2D" parent="elemente/elemente-nivel0/player/player"]
 current = true
 
-[node name="items" type="YSort" parent="elemente/YSort/player"]
+[node name="items" type="YSort" parent="elemente/elemente-nivel0/player"]
 
-[node name="sword" parent="elemente/YSort/player/items" instance=ExtResource( 8 )]
+[node name="sword" parent="elemente/elemente-nivel0/player/items" instance=ExtResource( 8 )]
 position = Vector2( 160, 92.8251 )
 rotation = 0.369027
 scale = Vector2( 0.995504, 0.971556 )
 
-[node name="bere" parent="elemente/YSort/player/items" instance=ExtResource( 5 )]
+[node name="bere" parent="elemente/elemente-nivel0/player/items" instance=ExtResource( 5 )]
 position = Vector2( 46.3326, 85.8787 )
 scale = Vector2( 1.00592, 0.991091 )
 
-[node name="trees" type="YSort" parent="elemente/YSort"]
+[node name="trees" type="YSort" parent="elemente/elemente-nivel0"]
 position = Vector2( 24, 72 )
 
-[node name="tree" parent="elemente/YSort/trees" instance=ExtResource( 3 )]
+[node name="tree" parent="elemente/elemente-nivel0/trees" instance=ExtResource( 3 )]
 position = Vector2( 0, -16 )
 
-[node name="tree2" parent="elemente/YSort/trees" instance=ExtResource( 3 )]
+[node name="tree2" parent="elemente/elemente-nivel0/trees" instance=ExtResource( 3 )]
 position = Vector2( 200, 64 )
 
-[node name="tree3" parent="elemente/YSort/trees" instance=ExtResource( 3 )]
+[node name="tree3" parent="elemente/elemente-nivel0/trees" instance=ExtResource( 3 )]
 position = Vector2( 184, -24 )
 
-[node name="tree4" parent="elemente/YSort/trees" instance=ExtResource( 3 )]
+[node name="tree4" parent="elemente/elemente-nivel0/trees" instance=ExtResource( 3 )]
 position = Vector2( 64, 64 )
 
-[node name="houses" type="YSort" parent="elemente/YSort"]
+[node name="houses" type="YSort" parent="elemente/elemente-nivel0"]
 
-[node name="casa" parent="elemente/YSort/houses" instance=ExtResource( 4 )]
+[node name="casa" parent="elemente/elemente-nivel0/houses" instance=ExtResource( 4 )]
 position = Vector2( 104, 48 )
 scale = Vector2( 2, 2 )
 
-[node name="inamici" type="YSort" parent="elemente/YSort"]
+[node name="inamici" type="YSort" parent="elemente/elemente-nivel0"]
 position = Vector2( 96, 52.0511 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="inamic_emojiRetardat" parent="elemente/YSort/inamici" instance=ExtResource( 6 )]
+[node name="inamic_emojiRetardat" parent="elemente/elemente-nivel0/inamici" instance=ExtResource( 6 )]
 position = Vector2( 200, 56 )
 script = ExtResource( 7 )
 
-[node name="YSort2" type="YSort" parent="elemente/YSort"]
+[node name="fireplace" type="YSort" parent="elemente/elemente-nivel0"]
 
-[node name="fireplace" parent="elemente/YSort/YSort2" instance=ExtResource( 9 )]
+[node name="fireplace" parent="elemente/elemente-nivel0/fireplace" instance=ExtResource( 9 )]
 position = Vector2( 39.9962, 104 )

@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 1.66005
-height = 9.74368
+height = 15.7306
 
 [sub_resource type="Animation" id=2]
 resource_name = "fireAnimation"
@@ -31,9 +31,10 @@ script = ExtResource( 2 )
 position = Vector2( 0, -16.2806 )
 texture = ExtResource( 1 )
 hframes = 9
+frame = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -6.3462 )
+position = Vector2( 0, -6.4865 )
 rotation = -1.5708
 shape = SubResource( 1 )
 

@@ -61,7 +61,11 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("drop") and selectedItem != null:
 		$Position2D/RemoteTransform2D.remote_path = ""
 		selectedItem = null
-	
+		
+	if Input.is_action_just_pressed("UiAcces"):
+		toggle_inventory() 
+		
+	#CODUL LUI RARES :))
 	if Input.is_action_just_pressed("interact") and $houseDetector.get_overlapping_areas().size()>0:
 		if whereTheFuckIAm == Location.INSIDE_HOUSE:
 # warning-ignore:return_value_discarded
@@ -83,3 +87,7 @@ func _on_Area2D_body_entered(body):
 #functie semnal ca mai sus, dar pentru iesire
 func _on_Area2D_body_exited(_body):
 	item = null
+
+func toggle_inventory():
+	$InventoryUI/Inventory.visible = !$InventoryUI/Inventory.visible
+	return $InventoryUI/Inventory.visible
