@@ -16,7 +16,7 @@
 [node name="floor" type="Node" parent="."]
 
 [node name="grass" type="Sprite" parent="floor"]
-position = Vector2( 133, 88.7624 )
+position = Vector2( 137.186, 102 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 656, 432 )
@@ -34,7 +34,7 @@ tile_data = PoolIntArray( 65540, 0, 196611 )
 [node name="player" type="YSort" parent="elemente/elemente-nivel0"]
 
 [node name="player" parent="elemente/elemente-nivel0/player" instance=ExtResource( 1 )]
-position = Vector2( 120, 87.8754 )
+position = Vector2( 119.279, 88.7624 )
 
 [node name="Camera2D" type="Camera2D" parent="elemente/elemente-nivel0/player/player"]
 current = true
