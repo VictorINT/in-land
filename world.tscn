@@ -37,6 +37,7 @@ position = Vector2( 119.279, 88.7624 )
 
 [node name="Camera2D" type="Camera2D" parent="elemente/elemente-nivel0/player/player"]
 current = true
+zoom = Vector2( 0.7, 0.7 )
 
 [node name="items" type="YSort" parent="elemente/elemente-nivel0/player"]
 
