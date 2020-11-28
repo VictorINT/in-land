@@ -16,7 +16,7 @@
 [node name="floor" type="Node" parent="."]
 
 [node name="grass" type="Sprite" parent="floor"]
-position = Vector2( 137.186, 102 )
+position = Vector2( 136.852, 102 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 656, 432 )
@@ -25,7 +25,6 @@ region_rect = Rect2( 0, 0, 656, 432 )
 tile_set = ExtResource( 10 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 65540, 0, 196611 )
 
 [node name="elemente" type="Node" parent="."]
 
@@ -68,7 +67,7 @@ position = Vector2( 64, 64 )
 [node name="houses" type="YSort" parent="elemente/elemente-nivel0"]
 
 [node name="casa" parent="elemente/elemente-nivel0/houses" instance=ExtResource( 4 )]
-position = Vector2( 104, 48 )
+position = Vector2( 118.558, 34.3179 )
 scale = Vector2( 2, 2 )
 
 [node name="inamici" type="YSort" parent="elemente/elemente-nivel0"]

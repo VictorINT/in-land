@@ -68,7 +68,7 @@ func _physics_process(delta):
 	#CODUL LUI RARES :))
 	if Input.is_action_just_pressed("interact") and $houseDetector.get_overlapping_areas().size()>0:
 		if whereTheFuckIAm == Location.INSIDE_HOUSE:
-# warning-ignore:return_value_discarded
+# warning-ignore:return_value_discarded 
 			get_tree().change_scene_to(main_scene)
 			whereTheFuckIAm = Location.OUTSIDE
 			PlayerSkeleton.playerLocation = Location.OUTSIDE
