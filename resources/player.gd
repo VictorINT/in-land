@@ -65,7 +65,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("UiAcces"):
 		toggle_inventory() 
 		
-	#CODUL LUI RARES :))
+
 	if Input.is_action_just_pressed("interact") and $houseDetector.get_overlapping_areas().size()>0:
 		if whereTheFuckIAm == Location.INSIDE_HOUSE:
 # warning-ignore:return_value_discarded 
