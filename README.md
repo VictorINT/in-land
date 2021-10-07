@@ -1,3 +1,6 @@
 # In Land
 
-Un joc despre americani fiind americani.
+#
+A game made for learning purposes.
+#
+Game theme: Americans.
